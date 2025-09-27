@@ -1,0 +1,58 @@
+{
+  "info": {
+    "name": "Log Analyzer API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Health check",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:5000/health",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "health"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Analyze logs",
+      "request": {
+        "method": "POST",
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "file",
+              "type": "file",
+              "src": "examples/access.log"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:5000/analyze?top=5",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "analyze"
+          ],
+          "query": [
+            {
+              "key": "top",
+              "value": "5"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}
